@@ -17,6 +17,7 @@ func TestParseInt(t *testing.T) {
 		{name: "Should return not ok", in: "", out: 0, ok: false},
 		{name: "Should return ok for zero", in: "0", out: 0, ok: true},
 		{name: "Should return ok", in: "1", out: 1, ok: true},
+		{name: "Should not return ok by error", in: "¬¬", out: 0, ok: false},
 	}
 
 	for _, tt := range tableTests {
