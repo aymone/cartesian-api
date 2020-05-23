@@ -4,7 +4,7 @@ package models
 type Points struct {
 	X        int `json:"x"`
 	Y        int `json:"y"`
-	Distance int
+	Distance int `json:"-"`
 }
 
 // DistanceSorter implements sort.Interface based on the Points.Distance field.
