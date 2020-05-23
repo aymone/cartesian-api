@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// Handlers will handle requests from gin to services
+// Handler will handle requests from gin to services
 type Handler interface {
 	GetPoints(c *gin.Context)
 }
@@ -17,6 +17,7 @@ type handler struct {
 	pointsService services.PointsService
 }
 
+// New return a new instance of handler
 func New(s services.PointsService) *handler {
 	return &handler{
 		pointsService: s,
