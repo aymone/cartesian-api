@@ -41,6 +41,17 @@ Inside data dir exists a file called "points.json" that are used to calculate di
 
 ## Running
 
+**Important!**
+
+As we using go mod as dependency manager, maybe you will need to export `GO111MODULE` env var before run this project.
+
+Some people have `dep` and `mod` together, to avoiding conflicts with `go dep`, just disable `go mod` when you not using, this will prevent `mod` to create files like `go.mod` and `go.sum` in your other projects with dep.
+
+```bash
+#on/off/auto
+export GO111MODULE=auto
+```
+
 Inside root directory exists a `Makefile` to better instrumentation of that available commands:
 
 Running the project
@@ -73,4 +84,4 @@ make deps
 
 - Go mod
 
-## I hope you enjoy this exercise
+## I hope you enjoy :D
