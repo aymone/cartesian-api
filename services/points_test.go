@@ -18,13 +18,7 @@ func TestGetPoints(t *testing.T) {
 
 	s := NewPointsService(data)
 
-	p := models.Points{
-		Distance: 5,
-		X:        3,
-		Y:        1,
-	}
-
-	list := s.GetPoints(&p)
+	list := s.GetPoints(3, 1, 5)
 
 	// evaluate quantity of results
 	assert.Len(t, list, 4)

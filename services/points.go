@@ -9,7 +9,7 @@ import (
 
 // PointsService interface
 type PointsService interface {
-	GetPoints(dp *models.Points) []*models.Points
+	GetPoints(x, y, distance int) []*models.Points
 }
 
 type pointsService struct {
@@ -23,8 +23,14 @@ func NewPointsService(p []*models.Points) *pointsService {
 	}
 }
 
-func (s *pointsService) GetPoints(p *models.Points) []*models.Points {
+func (s *pointsService) GetPoints(x, y, distance int) []*models.Points {
 	var list []*models.Points
+
+	p := &models.Points{
+		X:        x,
+		Y:        y,
+		Distance: distance,
+	}
 
 	for _, v := range s.points {
 		distance := calculate(p, v)
