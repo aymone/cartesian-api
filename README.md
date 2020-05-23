@@ -54,6 +54,12 @@ export GO111MODULE=auto
 
 Inside root directory exists a `Makefile` to better instrumentation of that available commands:
 
+By default the app will run on localhost:8080, to change port:
+
+```bash
+export PORT=3000
+```
+
 Running the project
 
 ```bash

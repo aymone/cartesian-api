@@ -8,22 +8,25 @@ import (
 
 	"github.com/aymone/cartesian-api/handlers"
 	"github.com/aymone/cartesian-api/models"
+	"github.com/aymone/cartesian-api/router"
 	"github.com/aymone/cartesian-api/services"
-	"github.com/gin-gonic/gin"
 )
 
+const portEnv string = "PORT"
+const portDefault string = "8080"
+const jsonFilePath string = "data/points.json"
+
 func main() {
-	port := os.Getenv("PORT")
+	port := os.Getenv(portEnv)
 	if port == "" {
-		port = "8080"
+		port = portDefault
 		log.Printf("Defaulting to port %s", port)
 	}
 
-	jsonFile, err := os.Open("data/points.json")
+	jsonFile, err := os.Open(jsonFilePath)
 	if err != nil {
 		log.Printf("Error opening data points file: %v", err)
 	}
-
 	defer jsonFile.Close()
 
 	byteValue, _ := ioutil.ReadAll(jsonFile)
@@ -32,10 +35,7 @@ func main() {
 
 	s := services.NewPointsService(points)
 	h := handlers.New(s)
-	r := gin.New()
-
-	// Define handlers
-	r.GET("/api/points", h.GetPoints)
+	r := router.Init(h)
 
 	// Listen and serve on defined port
 	log.Printf("Listening on port %s", port)
