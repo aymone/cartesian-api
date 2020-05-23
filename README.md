@@ -1,5 +1,8 @@
 # Cartesian API
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/aymone/cartesian-api)](https://goreportcard.com/report/github.com/aymone/cartesian-api)
+[![Maintainability](https://api.codeclimate.com/v1/badges/67651a109b421ee1213f/maintainability)](https://codeclimate.com/github/aymone/api-unit-test/maintainability)
+
 A simple API to get [manhattan distance](https://xlinux.nist.gov/dads/HTML/manhattanDistance.html) between 1xN vectors.
 
 Sample:
