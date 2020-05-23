@@ -21,24 +21,16 @@ Params:
 Return points ordered by increasing distance, limited by informed distance threshold:
 
 ```json
-{
-    "points": [
-        {
-            "distance": 1,
-            "points": {
-                "x": 2,
-                "y": 1,
-            }
-        },
-        {
-            "distance": 2,
-            "points": {
-                "x": 3,
-                "y": 1,
-            }
-        },
-    ]
-}
+[
+    {
+        "x": 2,
+        "y": -8
+    },
+    {
+        "x": 18,
+        "y": -3
+    },
+]
 ```
 
 Inside data dir exists a file called "points.json" that are used to calculate distances between informed coordinate
